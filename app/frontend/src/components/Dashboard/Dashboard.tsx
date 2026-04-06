@@ -54,8 +54,14 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-container">
             <MenuBar />
             <div className="dashboard-content">
+                <div className="dashboard-header">
+                    <h1>My Medical Requests</h1>
+                </div>
                 <div className="center-panel">
                     <div className="tickets">
+                        {tickets.length === 0 && !isLoading && (
+                            <p className="no-tickets">No medical requests found.</p>
+                        )}
                         {tickets.map(ticket => (
                             <div key={ticket.id} className="ticket-badge">
                                 <div className="ticket" onClick={() => toggleExpand(parseInt(ticket.id))}>
@@ -63,7 +69,7 @@ const Dashboard: React.FC = () => {
                                         <h3>{ticket.title}</h3>
                                         <div className="ticket-meta">
                                             <span className="created-date">{new Date(ticket.createdDate).toLocaleDateString()}</span>
-                                            <span className={`status-badge ${ticket.status.toLowerCase()}`}>{ticket.status}</span>
+                                            <span className={`status-badge ${ticket.status.toLowerCase().replace(/\s+/g, '')}`}>{ticket.status}</span>
                                         </div>
                                     </div>
                                     {expandedTicketId === parseInt(ticket.id) && (

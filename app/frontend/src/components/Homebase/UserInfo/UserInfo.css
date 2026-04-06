@@ -1,40 +1,59 @@
 .user-info-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .user-info-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
 }
 
 .user-info-avatar img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 16px;
+  border-radius: var(--radius-full);
+  width: 50px;
+  height: 50px;
+  margin-right: var(--spacing-md);
+  border: 2px solid var(--primary-light);
+  object-fit: cover;
 }
 
 .user-info-header h2 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #333;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
 }
 
 .user-info-details {
-    margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 .user-info-item {
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.user-info-item span {
-    font-size: 1em;
-    color: #555;
+.user-info-item:last-child {
+  border-bottom: none;
+}
+
+.user-info-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.user-info-value {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
 }

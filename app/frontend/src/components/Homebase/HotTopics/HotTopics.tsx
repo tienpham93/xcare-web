@@ -13,7 +13,7 @@ const HotTopics: React.FC<HotTopicsProps> = ({ onTopicSelect }) => {
 
     return (
         <div className="hot-topics-container">
-            <h2>Hot Topics</h2>
+            <h2>Quick Actions</h2>
             <ul>
                 {topics.map((topic) => (
                     <li key={topic.index} onClick={() => onTopicSelect(topic.content)}>

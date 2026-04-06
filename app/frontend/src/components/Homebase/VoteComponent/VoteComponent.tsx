@@ -5,6 +5,7 @@ interface VoteComponentProps {
     conversation: {
         user: string;
         bot: string;
+        debug?: any;
     };
     onVote: (conversation: any, vote: 'like' | 'dislike') => void;
 }

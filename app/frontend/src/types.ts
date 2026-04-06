@@ -18,6 +18,7 @@ export interface Message {
     sender: 'user' | 'bot';
     timestamp: Date;
     messageType?: 'general' | 'submit';
+    debug?: any;
 }
 
 export interface Ticket {

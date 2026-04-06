@@ -12,17 +12,20 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
                 <div className="user-info-avatar">
                     <img src="/ok.jpg" alt="User avatar" />
                 </div>
-                <h2>Personal Information</h2>
+                <h2>Patient Profile</h2>
             </div>
             <div className="user-info-details">
                 <div className="user-info-item">
-                    <span>Username: {user.username}</span>
+                    <span className="user-info-label">Patient ID</span>
+                    <span className="user-info-value">{user.username}</span>
                 </div>
                 <div className="user-info-item">
-                    <span>Gender: {user.gender}</span>
+                    <span className="user-info-label">Gender</span>
+                    <span className="user-info-value">{user.gender}</span>
                 </div>
                 <div className="user-info-item">
-                    <span>Age: {user.age}</span>
+                    <span className="user-info-label">Age</span>
+                    <span className="user-info-value">{user.age} yrs</span>
                 </div>
             </div>
         </div>

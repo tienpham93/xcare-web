@@ -27,12 +27,12 @@ const MenuBar: React.FC = () => {
     return (
         <div className="menu-bar">
             <div className="menu-left">
-                <h2>XCare Management Service</h2>
+                <h2>XCare Pro</h2>
             </div>
             <div className="menu-right">
-                <button onClick={handleDashboardClick} className="menu-button">Dashboard</button>
-                <button onClick={handleHomebaseClick} className="menu-button">Homebase</button>
-                <button onClick={handleLogout} className="menu-button">Logout</button>
+                <button onClick={handleHomebaseClick} className="menu-button">Consultant</button>
+                <button onClick={handleDashboardClick} className="menu-button">My Requests</button>
+                <button onClick={handleLogout} className="menu-button logout">Sign Out</button>
             </div>
         </div>
     );

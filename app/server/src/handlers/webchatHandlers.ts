@@ -95,7 +95,8 @@ export const postAnalyticHandler = async (req: Request, res: Response): Promise<
                     user: conversation.user,
                     bot: conversation.bot,
                 },
-                vote: vote 
+                vote: vote,
+                evalMetadata: conversation.debug
             }),   
         });
 

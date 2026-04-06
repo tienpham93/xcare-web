@@ -52,7 +52,7 @@ const ChatBox: React.FC<ChatboxProps> = ({ inputValue, setInputValue }) => {
     useEffect(() => {
         const initialGreeting: Message = {
             id: uuidv4(),
-            text: 'Hello! Welcome to XCare, how can I assist you today?',
+            text: 'Good day. I am your XCare Digital Assistant. How can I support your healthcare needs today?',
             timestamp: new Date(),
             sender: 'bot',
         };
@@ -128,6 +128,7 @@ const ChatBox: React.FC<ChatboxProps> = ({ inputValue, setInputValue }) => {
                         text: content,
                         timestamp: new Date(),
                         sender: 'bot',
+                        debug: data.debug,
                     }]);
                 }
             }
@@ -195,6 +196,7 @@ const ChatBox: React.FC<ChatboxProps> = ({ inputValue, setInputValue }) => {
                             <VoteComponent conversation={{
                                 user: chatHistory[index - 1]?.text || '',
                                 bot: message?.text || '',
+                                debug: message?.debug
                             }} onVote={handleVote} />
                         )}
                     </div>

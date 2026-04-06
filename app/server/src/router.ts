@@ -1,7 +1,7 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { getTicketsHandler, postGenerateHandler, postLoginHandler, postAnalyticHandler } from './handlers/webchatHandlers';
 
-const router = express.Router();
+const router: Router = express.Router();
 
 router.use('/webchat/message', postGenerateHandler);
 router.use('/webchat/login', postLoginHandler);

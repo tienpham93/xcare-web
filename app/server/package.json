@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "yarn build && node dist/server/src/server.js",
-    "build": "yarn clean && tsc --build",
+    "start": "bun src/server.ts",
+    "dev": "bun --watch src/server.ts",
+    "build": "bun run clean && bun build ./src/server.ts --target node --outdir ./dist",
     "clean": "rimraf dist"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "rimraf": "^6.0.0"
   }
 }
