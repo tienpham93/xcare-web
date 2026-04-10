@@ -10,7 +10,7 @@ export const postGenerateHandler = async (req: Request, res: Response): Promise<
             sessionId: sessionId,
             username: username,
             messageType: messageType,
-            model: "x-care-uncle",
+            model: "llama3",
             prompt: message
         };
 
@@ -19,7 +19,7 @@ export const postGenerateHandler = async (req: Request, res: Response): Promise<
         const response = await fetch(`${llmBaseUrl}/agent/generate`, {
             method: 'POST',
             headers: {
-                'authorization': `Bearer ${req.headers.authorization}`,
+                'authorization': req.headers.authorization || '',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
@@ -69,7 +69,7 @@ export const getTicketsHandler = async (req: Request, res: Response): Promise<vo
     try {
         const response = await fetch(`${llmBaseUrl}/agent/tickets?createdBy=${createdBy}`, {
             headers: {
-                'Authorization': `Bearer ${req.headers.authorization}`,
+                'Authorization': req.headers.authorization || '',
             },
         });
 
@@ -88,7 +88,7 @@ export const postAnalyticHandler = async (req: Request, res: Response): Promise<
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'authorization': `Bearer ${req.headers.authorization}`,
+                'authorization': req.headers.authorization || '',
             },
             body: JSON.stringify({ 
                 conversation: {
